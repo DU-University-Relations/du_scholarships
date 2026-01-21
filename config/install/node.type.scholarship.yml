@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:menu_link_content:a287ef3c-9ec6-4f5f-9499-e41e56798b59'
+name: Scholarship
+type: scholarship
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

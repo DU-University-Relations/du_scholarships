@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_scholarship_major_school
+    - taxonomy.vocabulary.scholarship_major
+    - taxonomy.vocabulary.schools
+id: taxonomy_term.scholarship_major.field_scholarship_major_school
+field_name: field_scholarship_major_school
+entity_type: taxonomy_term
+bundle: scholarship_major
+label: 'Associated School'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      schools: schools
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: schools
+field_type: entity_reference

@@ -1,0 +1,226 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.scholarship.body
+    - field.field.node.scholarship.field_api_update_stamp
+    - field.field.node.scholarship.field_scholarship_api_hash
+    - field.field.node.scholarship.field_scholarship_class_level
+    - field.field.node.scholarship.field_scholarship_code
+    - field.field.node.scholarship.field_scholarship_description
+    - field.field.node.scholarship.field_scholarship_home_state
+    - field.field.node.scholarship.field_scholarship_international
+    - field.field.node.scholarship.field_scholarship_kind
+    - field.field.node.scholarship.field_scholarship_last_update
+    - field.field.node.scholarship.field_scholarship_major
+    - field.field.node.scholarship.field_scholarship_minimum_age
+    - field.field.node.scholarship.field_scholarship_minimum_gpa
+    - field.field.node.scholarship.field_scholarship_population
+    - field.field.node.scholarship.field_scholarship_race_codes
+    - field.field.node.scholarship.field_scholarship_school
+    - node.type.scholarship
+  module:
+    - content_moderation
+    - field_group
+    - path
+    - text
+third_party_settings:
+  field_group:
+    group_scholarship_categorization:
+      children:
+        - field_scholarship_minimum_gpa
+        - field_scholarship_class_level
+        - field_scholarship_kind
+        - field_scholarship_population
+        - field_scholarship_home_state
+        - field_scholarship_school
+        - field_scholarship_major
+        - field_scholarship_minimum_age
+        - field_scholarship_race_codes
+        - field_scholarship_international
+        - field_scholarship_last_update
+      parent_name: ''
+      weight: 4
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        open: false
+        required_fields: true
+      label: Categorization
+      region: content
+id: node.scholarship.default
+targetEntityType: node
+bundle: scholarship
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_api_update_stamp:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_timestamp
+    region: content
+  field_scholarship_api_hash:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_scholarship_class_level:
+    weight: 13
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_scholarship_code:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_scholarship_description:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_scholarship_home_state:
+    weight: 16
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_scholarship_international:
+    weight: 21
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_scholarship_kind:
+    weight: 14
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_scholarship_last_update:
+    weight: 22
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_timestamp
+    region: content
+  field_scholarship_major:
+    weight: 18
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_scholarship_minimum_age:
+    weight: 19
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_scholarship_minimum_gpa:
+    weight: 12
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_scholarship_population:
+    weight: 15
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_scholarship_race_codes:
+    weight: 20
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_scholarship_school:
+    weight: 17
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 12
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 8
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 13
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 9
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+  url_redirects:
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  body: true

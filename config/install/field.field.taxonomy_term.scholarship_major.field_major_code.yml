@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_major_code
+    - taxonomy.vocabulary.scholarship_major
+id: taxonomy_term.scholarship_major.field_major_code
+field_name: field_major_code
+entity_type: taxonomy_term
+bundle: scholarship_major
+label: 'Major Code'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

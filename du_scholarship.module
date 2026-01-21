@@ -1,0 +1,169 @@
+<?php
+
+/**
+ * @file
+ * Description.
+ */
+
+use Drupal\taxonomy\Entity\Term;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function du_scholarship_form_views_exposed_form_alter(&$form, $form_state, $form_id) {
+  $storage = $form_state->getStorage();
+  if (!empty($storage['view'])) {
+    $view = $storage['view'];
+    if ($view->id() == 'scholarship' && $view->current_display == 'block_1') {
+      _set_class_level($form);
+      // Adjusted the dropdowns filters:
+      $dropdown_filters = [
+        'field_scholarship_minimum_gpa_value',
+        'field_scholarship_home_state_target_id',
+        'field_scholarship_population_value',
+        'field_scholarship_school_target_id',
+        'field_scholarship_major_target_id',
+        'field_scholarship_class_level_value',
+        'field_scholarship_kind_value',
+      ];
+      foreach ($dropdown_filters as $filter) {
+        $label = $form['#info']['filter-' . $filter]['label'];
+        $form[$filter]['#options']['All'] = $label;
+      }
+
+      $major_field = 'field_scholarship_major_target_id';
+      $major_options = $form[$major_field]['#options'];
+      foreach ($major_options as $key => $option) {
+        if (is_object($option)) {
+          $element = $option->option;
+          reset($element);
+          $tid = key($element);
+          if ($tid) {
+            $term = Term::load($tid);
+            $school = $term->field_scholarship_major_school;
+            $label = $element[$tid] . "-" . $school->target_id;
+            $form[$major_field]['#options'][$key]->option[$tid] = $label;
+          }
+        }
+      }
+
+      // Update Unit Affiliation filter drop down options with unit terms
+      // alphabetically.
+      $unit_lists = _du_scholarship_get_unit_taxonomy_terms();
+      $form['field_scholarship_school_target_id'] = [
+        '#type' => 'select',
+        '#title' => t('Academic Unit'),
+        '#options' => $unit_lists,
+        '#weight' => 4,
+      ];
+
+      // Added the JavaScript for filters:
+      $form['#attached']['library'][] = 'du_scholarship/scholarship';
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_views_view_field().
+ */
+function du_scholarship_preprocess_views_view_field(&$variables) {
+  $view = $variables['view'];
+  $field = $variables['field'];
+  if ($view->id() == 'scholarship') {
+    switch ($field->field) {
+      case 'field_scholarship_minimum_gpa':
+      case 'field_scholarship_class_level':
+      case 'field_scholarship_home_state':
+      case 'field_scholarship_school':
+      case 'field_scholarship_major':
+      case 'field_scholarship_population':
+        $this_field_value = $field->getValue($variables['row']);
+        if (empty($this_field_value)) {
+          $variables['output'] = 'nofieldvalue';
+        }
+        break;
+    }
+  }
+}
+
+/**
+ * Adjusted the Class Level filter.
+ *
+ * @param array $form
+ *   Exposed filter form.
+ */
+function _set_class_level(array &$form) {
+  $class_levels = $form['field_scholarship_class_level_value']['#options'];
+  foreach ($class_levels as $key => $label) {
+    if ($key == 'All') {
+      $label = '<span>All</span> Years';
+    }
+    else {
+      if (strlen($label) < 25) {
+        $first_word = explode('-', trim($label));
+        $replacement = '<span>' . $first_word[0] . '</span> ';
+        $label = str_replace($first_word[0] . '-', $replacement, $label);
+      }
+    }
+  }
+}
+
+/**
+ * Gets an array of School Taxonomy Terms that Scholarships are linked to.
+ *
+ * @return array
+ *   Array of School Taxonomy Terms.
+ */
+function _du_scholarship_get_unit_taxonomy_terms() {
+
+  $unique_tid_array = [];
+  $unit_terms = ['All' => 'All Academic Units'];
+
+  // Query should return alphabetically ascending school terms.
+  $units = \Drupal::entityQuery('taxonomy_term')
+    ->accessCheck(TRUE)
+    ->condition('vid', 'schools')
+    ->execute();
+
+  // Get all Scholarship having active status.
+  $query = \Drupal::entityQuery('node')
+    ->condition('type', 'scholarship')
+    ->condition('status', 1);
+
+  $nids = $query->accessCheck(TRUE)->execute();
+  $node_storage = \Drupal::service('entity_type.manager')->getStorage('node');
+  $units_with_scholarships = [];
+
+  if (!empty($nids)) {
+    // Get associated schools for each scholarship to create filter options.
+    foreach ($nids as $nid) {
+      $node = $node_storage->load($nid);
+      $school_references = $node->field_scholarship_school->getValue();
+      if (!empty($school_references)) {
+        foreach ($school_references as $item) {
+          $tid = $item['target_id'];
+          if (!in_array($tid, $units_with_scholarships)) {
+            $units_with_scholarships[] = $tid;
+          }
+        }
+      }
+    }
+  }
+
+  // Only show schools having scholarhips linked to them.
+  $units = array_intersect($units, $units_with_scholarships);
+  if (!empty($units)) {
+    foreach ($units as $tid => $term) {
+      $term = \Drupal::service('entity_type.manager')->getStorage("taxonomy_term")->load($tid);
+      if (!empty($term)) {
+        if (!in_array($tid, $unique_tid_array)) {
+          $term_name = $term->getName();
+          $unique_tid_array[] = $tid;
+          $unit_terms[$tid] = $term_name;
+        }
+      }
+    }
+  }
+
+  return $unit_terms;
+}

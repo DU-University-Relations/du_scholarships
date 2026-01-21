@@ -1,0 +1,10 @@
+du_scholarship_import.admin_settings:
+  title: 'DU Scholarship Import Settings'
+  parent: system.admin_config_content
+  route_name: 'du_scholarship_import.admin_settings'
+du_scholarship_import.remove_timestamps:
+  title: 'Remove Timestamps'
+  description: 'Remove timestamps from select scholarships.'
+  parent: du_scholarship_import.admin_settings
+  route_name: du_scholarship_import.remove_timestamps
+  weight: -10

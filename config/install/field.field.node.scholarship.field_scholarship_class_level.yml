@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_scholarship_class_level
+    - node.type.scholarship
+  module:
+    - options
+id: node.scholarship.field_scholarship_class_level
+field_name: field_scholarship_class_level
+entity_type: node
+bundle: scholarship
+label: 'Class Level'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

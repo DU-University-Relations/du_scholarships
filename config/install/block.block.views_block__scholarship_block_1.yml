@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.scholarship
+  module:
+    - views
+  theme:
+    - pl_drupal
+id: views_block__scholarship_block_1
+theme: pl_drupal
+region: hidden
+weight: 0
+provider: null
+plugin: 'views_block:scholarship-block_1'
+settings:
+  id: 'views_block:scholarship-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility: {  }

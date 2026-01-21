@@ -1,0 +1,5 @@
+scholarship:
+  js:
+    js/du_scholarship.js: {}
+  dependencies:
+    - core/jquery

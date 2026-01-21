@@ -1,0 +1,4 @@
+services:
+  du_scholarship_import:
+    class: \Drupal\du_scholarship_import\ScholarshipImport
+    arguments: ['@http_client', '@config.factory', '@logger.factory']

@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Scholarship Major'
+vid: scholarship_major
+description: ''
+weight: 0

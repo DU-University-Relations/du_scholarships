@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_scholarship_code
+    - node.type.scholarship
+id: node.scholarship.field_scholarship_code
+field_name: field_scholarship_code
+entity_type: node
+bundle: scholarship
+label: 'Scholarship Code'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

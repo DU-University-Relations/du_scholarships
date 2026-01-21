@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_api_update_stamp
+    - node.type.scholarship
+id: node.scholarship.field_api_update_stamp
+field_name: field_api_update_stamp
+entity_type: node
+bundle: scholarship
+label: 'API Update Stamp'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1603905920
+default_value_callback: ''
+settings: {  }
+field_type: timestamp

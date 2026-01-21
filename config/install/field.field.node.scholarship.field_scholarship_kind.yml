@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_scholarship_kind
+    - node.type.scholarship
+  module:
+    - options
+id: node.scholarship.field_scholarship_kind
+field_name: field_scholarship_kind
+entity_type: node
+bundle: scholarship
+label: 'Kind of Scholarship'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

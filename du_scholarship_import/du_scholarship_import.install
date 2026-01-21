@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @file
+ * DU Scholarship Import install.
+ */
+
+/**
+ * Implements hook_update_N().
+ *
+ * Delete existing scholarship.
+ */
+function du_scholarship_import_update_8001(&$sandbox) {
+  // Handle one pass through.
+  $nids = \Drupal::entityQuery('node')
+    ->accessCheck(TRUE)
+    ->condition('type', 'scholarship')
+    ->range(0, 25)
+    ->execute();
+
+  if (count($nids) > 0) {
+    // ContentLock object.
+    $contentLock = \Drupal::service('content_lock');;
+
+    $storage_handler = \Drupal::entityTypeManager()->getStorage('node');
+    $entities = $storage_handler->loadMultiple($nids);
+    foreach ($entities as $node) {
+      $contentLock->release($node->id(), $node->language);
+      $node->delete();
+    }
+  }
+
+  // If there are not 25 nodes, assume all have been deleted.
+  if (count($nids) >= 25) {
+    $sandbox['#finished'] = 0;
+  }
+  else {
+    $sandbox['#finished'] = 1;
+  }
+}

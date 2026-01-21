@@ -1,0 +1,38 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.scholarship_major.field_major_code
+    - field.field.taxonomy_term.scholarship_major.field_scholarship_major_school
+    - taxonomy.vocabulary.scholarship_major
+  module:
+    - text
+id: taxonomy_term.scholarship_major.default
+targetEntityType: taxonomy_term
+bundle: scholarship_major
+mode: default
+content:
+  description:
+    label: above
+    type: text_default
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_major_code:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_scholarship_major_school:
+    weight: 2
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden: {  }

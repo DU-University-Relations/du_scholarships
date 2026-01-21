@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_scholarship_minimum_age
+    - node.type.scholarship
+id: node.scholarship.field_scholarship_minimum_age
+field_name: field_scholarship_minimum_age
+entity_type: node
+bundle: scholarship
+label: 'Scholarship Minimum Age'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_scholarship_last_update
+    - node.type.scholarship
+id: node.scholarship.field_scholarship_last_update
+field_name: field_scholarship_last_update
+entity_type: node
+bundle: scholarship
+label: 'Scholarship Last Update'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1584575273
+default_value_callback: ''
+settings: {  }
+field_type: timestamp

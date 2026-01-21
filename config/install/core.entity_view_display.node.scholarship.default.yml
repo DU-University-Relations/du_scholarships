@@ -1,0 +1,170 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.scholarship.body
+    - field.field.node.scholarship.field_api_update_stamp
+    - field.field.node.scholarship.field_scholarship_api_hash
+    - field.field.node.scholarship.field_scholarship_class_level
+    - field.field.node.scholarship.field_scholarship_code
+    - field.field.node.scholarship.field_scholarship_description
+    - field.field.node.scholarship.field_scholarship_home_state
+    - field.field.node.scholarship.field_scholarship_international
+    - field.field.node.scholarship.field_scholarship_kind
+    - field.field.node.scholarship.field_scholarship_last_update
+    - field.field.node.scholarship.field_scholarship_major
+    - field.field.node.scholarship.field_scholarship_minimum_age
+    - field.field.node.scholarship.field_scholarship_minimum_gpa
+    - field.field.node.scholarship.field_scholarship_population
+    - field.field.node.scholarship.field_scholarship_race_codes
+    - field.field.node.scholarship.field_scholarship_school
+    - node.type.scholarship
+  module:
+    - options
+    - text
+    - user
+id: node.scholarship.default
+targetEntityType: node
+bundle: scholarship
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  content_moderation_control:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_api_update_stamp:
+    weight: 12
+    label: hidden
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+    type: timestamp
+    region: content
+  field_scholarship_api_hash:
+    weight: 13
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_scholarship_class_level:
+    weight: 6
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_scholarship_code:
+    weight: 11
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_scholarship_description:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_scholarship_home_state:
+    weight: 7
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_scholarship_international:
+    weight: 17
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_scholarship_kind:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_scholarship_last_update:
+    weight: 15
+    label: hidden
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+    type: timestamp
+    region: content
+  field_scholarship_major:
+    weight: 9
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_scholarship_minimum_age:
+    weight: 14
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_scholarship_minimum_gpa:
+    weight: 5
+    label: hidden
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_scholarship_population:
+    weight: 10
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_scholarship_race_codes:
+    weight: 16
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_scholarship_school:
+    weight: 8
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

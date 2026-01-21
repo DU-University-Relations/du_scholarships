@@ -1,0 +1,19 @@
+name: DU Scholarship
+description: 'Provides Scholarship content type and related configuration.'
+type: module
+core_version_requirement: ^8 || ^9 || ^10
+dependencies:
+  - allowed_formats
+  - block
+  - content_moderation
+  - field
+  - field_group
+  - menu_ui
+  - node
+  - options
+  - path
+  - taxonomy
+  - text
+  - user
+  - views
+package: du

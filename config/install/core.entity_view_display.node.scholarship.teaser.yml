@@ -1,0 +1,64 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.scholarship.body
+    - field.field.node.scholarship.field_api_update_stamp
+    - field.field.node.scholarship.field_scholarship_api_hash
+    - field.field.node.scholarship.field_scholarship_class_level
+    - field.field.node.scholarship.field_scholarship_code
+    - field.field.node.scholarship.field_scholarship_description
+    - field.field.node.scholarship.field_scholarship_home_state
+    - field.field.node.scholarship.field_scholarship_international
+    - field.field.node.scholarship.field_scholarship_kind
+    - field.field.node.scholarship.field_scholarship_last_update
+    - field.field.node.scholarship.field_scholarship_major
+    - field.field.node.scholarship.field_scholarship_minimum_age
+    - field.field.node.scholarship.field_scholarship_minimum_gpa
+    - field.field.node.scholarship.field_scholarship_population
+    - field.field.node.scholarship.field_scholarship_race_codes
+    - field.field.node.scholarship.field_scholarship_school
+    - node.type.scholarship
+  module:
+    - text
+    - user
+id: node.scholarship.teaser
+targetEntityType: node
+bundle: scholarship
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  content_moderation_control:
+    weight: -20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_api_update_stamp: true
+  field_scholarship_api_hash: true
+  field_scholarship_class_level: true
+  field_scholarship_code: true
+  field_scholarship_description: true
+  field_scholarship_home_state: true
+  field_scholarship_international: true
+  field_scholarship_kind: true
+  field_scholarship_last_update: true
+  field_scholarship_major: true
+  field_scholarship_minimum_age: true
+  field_scholarship_minimum_gpa: true
+  field_scholarship_population: true
+  field_scholarship_race_codes: true
+  field_scholarship_school: true

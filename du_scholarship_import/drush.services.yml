@@ -1,0 +1,9 @@
+services:
+  du_scholarship_import.commands:
+    class: \Drupal\du_scholarship_import\Commands\ScholarshipImportCommands
+    arguments:
+      - '@du_scholarship_import'
+      - '@queue'
+      - '@logger.factory'
+    tags:
+      - { name: drush.command }

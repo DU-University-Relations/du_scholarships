@@ -1,0 +1,112 @@
+.scholarship-list .card-list-item .cards-list__holder .flyout .flyout-content__holder .scholarship-kind {
+  font-weight: bold;
+  font-size: 1.8rem;
+  margin-top: 2.0rem;
+  margin-bottom: 2.0rem; }
+  @media print, screen and (min-width: 48em) {
+    .scholarship-list .card-list-item .cards-list__holder .flyout .flyout-content__holder .scholarship-kind {
+      margin-top: 4.0rem; } }
+
+.scholarship-list .card-list-item .cards-list__holder .flyout .flyout-content__holder .cards-module__buttons {
+  font-size: 1.6rem;
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 100%; }
+  .scholarship-list .card-list-item .cards-list__holder .flyout .flyout-content__holder .cards-module__buttons li {
+    margin-top: 0; }
+    .scholarship-list .card-list-item .cards-list__holder .flyout .flyout-content__holder .cards-module__buttons li span {
+      font-weight: bold; }
+      .scholarship-list .card-list-item .cards-list__holder .flyout .flyout-content__holder .cards-module__buttons li span:not(.inline-label) {
+        display: block; }
+  @media print, screen and (min-width: 48em) {
+    .scholarship-list .card-list-item .cards-list__holder .flyout .flyout-content__holder .cards-module__buttons {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 26.0rem; } }
+
+.scholarship {
+  margin: 6.0rem 0 6.0rem; }
+  .scholarship .scholarship-content__holder {
+    padding-bottom: 6.0rem; }
+    @media print, screen and (min-width: 64em) {
+      .scholarship .scholarship-content__holder {
+        padding-bottom: 0; } }
+    .scholarship .scholarship-content__holder .scholarship-kind {
+      font-weight: bold;
+      font-size: 1.8rem;
+      margin-top: 2.0rem;
+      margin-bottom: 2.0rem; }
+      @media print, screen and (min-width: 48em) {
+        .scholarship .scholarship-content__holder .scholarship-kind {
+          margin-top: 4.0rem; } }
+    .scholarship .scholarship-content__holder .rightside-info {
+      font-size: 1.6rem; }
+      .scholarship .scholarship-content__holder .rightside-info li {
+        margin-top: 0; }
+        .scholarship .scholarship-content__holder .rightside-info li span {
+          font-weight: bold; }
+          .scholarship .scholarship-content__holder .rightside-info li span:not(.inline-label) {
+            display: block; }
+
+.scholarship-view .pager__items {
+  display: flex;
+  justify-content: center; }
+
+.scholarship-filter-dropdown .form-item:not(.form-item-field-scholarship-kind-checkbox-financial) label {
+  display: none; }
+
+.scholarship-filter-search {
+  width: 100%; }
+  .scholarship-filter-search label {
+    display: none; }
+  .scholarship-filter-search .search-box {
+    padding-left: 1.0rem; }
+    .scholarship-filter-search .search-box input {
+      border-width: 0 0 .4rem 0;
+      padding-bottom: .2rem;
+      padding-right: 5.0rem;
+      border-color: #d1d1d2;
+      box-shadow: none;
+      margin-bottom: 0;
+      height: auto;
+      font-size: 1.8rem;
+      font-family: neue-haas-unica, sans-serif; }
+      @media print, screen and (min-width: 48em) {
+        .scholarship-filter-search .search-box input {
+          font-size: 2.4rem; } }
+      @media print, screen and (min-width: 64em) {
+        .scholarship-filter-search .search-box input {
+          font-size: 3.6rem; } }
+
+.scholarship-filter-submit > div {
+  height: 100%;
+  padding-top: 0.9rem; }
+  .scholarship-filter-submit > div input {
+    float: right;
+    height: 100%;
+    margin-bottom: 0;
+    text-transform: uppercase; }
+    @media print, screen and (min-width: 48em) {
+      .scholarship-filter-submit > div input {
+        padding-right: 10.0rem;
+        padding-left: 10.0rem; } }
+    @media print, screen and (max-width: 63.99875em) {
+      .scholarship-filter-submit > div input {
+        margin: 0 auto;
+        display: block;
+        float: none; } }
+
+.no-scholarship-result-found {
+  width: 100%;
+  text-align: center;
+  padding: 4.0rem 4.0rem 12.0rem 4.0rem; }
+
+.scholarship-filter {
+  margin-bottom: 6.0rem; }
+  .scholarship-filter #edit-field-scholarship-kind-checkbox > div > label {
+    display: inline-flex; }
+    @media screen and (max-width: 430px) {
+      .scholarship-filter #edit-field-scholarship-kind-checkbox > div > label {
+        margin-right: 0; } }
+  .scholarship-filter .scholarship-filter-search ~ .scholarship-filter-dropdown {
+    display: initial; }

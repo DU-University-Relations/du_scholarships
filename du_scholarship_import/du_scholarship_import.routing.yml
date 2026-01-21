@@ -1,0 +1,14 @@
+du_scholarship_import.admin_settings:
+  path: /admin/config/content/du_scholarship_import
+  defaults:
+    _form: '\Drupal\du_scholarship_import\Form\ModuleConfigurationForm'
+    _title: 'Scholarship Import Configuration'
+  requirements:
+    _permission: 'administer site configuration'
+du_scholarship_import.remove_timestamps:
+  path: '/admin/config/content/du_scholarship_import/remove_timestamps'
+  defaults:
+    _title: 'Remove Timestamps From Scholarships'
+    _form: '\Drupal\du_scholarship_import\Form\RemoveTimestamps'
+  requirements:
+    _permission: 'administer site configuration'

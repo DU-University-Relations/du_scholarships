@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_scholarship_major
+    - node.type.scholarship
+    - taxonomy.vocabulary.scholarship_major
+id: node.scholarship.field_scholarship_major
+field_name: field_scholarship_major
+entity_type: node
+bundle: scholarship
+label: Major
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      scholarship_major: scholarship_major
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_scholarship_description
+    - node.type.scholarship
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    rich_text: rich_text
+    plain_text: plain_text
+    embed_code: '0'
+    inline_formatting: '0'
+id: node.scholarship.field_scholarship_description
+field_name: field_scholarship_description
+entity_type: node
+bundle: scholarship
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_scholarship_international
+    - node.type.scholarship
+  module:
+    - options
+id: node.scholarship.field_scholarship_international
+field_name: field_scholarship_international
+entity_type: node
+bundle: scholarship
+label: 'International Students'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

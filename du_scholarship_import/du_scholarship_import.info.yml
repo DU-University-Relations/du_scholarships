@@ -1,0 +1,6 @@
+name: DU Scholarship Import
+description: Import Scholarship Entities
+type: module
+package: 'DU Scholarship Import'
+core_version_requirement: ^8 || ^9 || ^10
+configure: du_scholarship_import.admin_settings

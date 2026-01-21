@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_scholarship_school
+    - node.type.scholarship
+    - taxonomy.vocabulary.schools
+id: node.scholarship.field_scholarship_school
+field_name: field_scholarship_school
+entity_type: node
+bundle: scholarship
+label: 'School or College'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      schools: schools
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: schools
+field_type: entity_reference

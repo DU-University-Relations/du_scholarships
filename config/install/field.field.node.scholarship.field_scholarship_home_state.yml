@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_scholarship_home_state
+    - node.type.scholarship
+    - taxonomy.vocabulary.location
+id: node.scholarship.field_scholarship_home_state
+field_name: field_scholarship_home_state
+entity_type: node
+bundle: scholarship
+label: 'Home State'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      location: location
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: location
+field_type: entity_reference

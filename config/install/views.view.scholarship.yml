@@ -1,0 +1,1291 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_scholarship_class_level
+    - field.storage.node.field_scholarship_description
+    - field.storage.node.field_scholarship_home_state
+    - field.storage.node.field_scholarship_kind
+    - field.storage.node.field_scholarship_major
+    - field.storage.node.field_scholarship_minimum_gpa
+    - field.storage.node.field_scholarship_population
+    - field.storage.node.field_scholarship_school
+    - node.type.scholarship
+    - taxonomy.vocabulary.location
+    - taxonomy.vocabulary.scholarship_major
+    - taxonomy.vocabulary.schools
+  module:
+    - node
+    - options
+    - taxonomy
+    - text
+id: scholarship
+label: 'Scholarship Search'
+module: views
+description: ''
+tag: ''
+base_table: node_field_data
+base_field: nid
+core: 8.x
+display:
+  default:
+    display_plugin: default
+    id: default
+    display_title: Master
+    position: 0
+    display_options:
+      access:
+        type: none
+        options: {  }
+      cache:
+        type: tag
+        options: {  }
+      query:
+        type: views_query
+        options:
+          disable_sql_rewrite: false
+          distinct: true
+          replica: false
+          query_comment: ''
+          query_tags: {  }
+      exposed_form:
+        type: basic
+        options:
+          submit_button: 'Update result'
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      pager:
+        type: full
+        options:
+          items_per_page: 12
+          offset: 0
+          id: 0
+          total_pages: null
+          tags:
+            previous: '‹ Previous'
+            next: 'Next ›'
+            first: '« First'
+            last: 'Last »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 3
+      style:
+        type: default
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: false
+            ellipsis: false
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: node
+          entity_field: title
+          plugin_id: field
+        field_scholarship_description:
+          id: field_scholarship_description
+          table: node__field_scholarship_description
+          field: field_scholarship_description
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: text_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_scholarship_minimum_gpa:
+          id: field_scholarship_minimum_gpa
+          table: node__field_scholarship_minimum_gpa
+          field: field_scholarship_minimum_gpa
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_decimal
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+            decimal_separator: .
+            scale: 1
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_scholarship_class_level:
+          id: field_scholarship_class_level
+          table: node__field_scholarship_class_level
+          field: field_scholarship_class_level
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: list_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_scholarship_home_state:
+          id: field_scholarship_home_state
+          table: node__field_scholarship_home_state
+          field: field_scholarship_home_state
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_scholarship_kind:
+          id: field_scholarship_kind
+          table: node__field_scholarship_kind
+          field: field_scholarship_kind
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: list_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_scholarship_major:
+          id: field_scholarship_major
+          table: node__field_scholarship_major
+          field: field_scholarship_major
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_scholarship_population:
+          id: field_scholarship_population
+          table: node__field_scholarship_population
+          field: field_scholarship_population
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: list_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_scholarship_school:
+          id: field_scholarship_school
+          table: node__field_scholarship_school
+          field: field_scholarship_school
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            scholarship: scholarship
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+            argument: null
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+        field_scholarship_minimum_gpa_value:
+          id: field_scholarship_minimum_gpa_value
+          table: node__field_scholarship_minimum_gpa
+          field: field_scholarship_minimum_gpa_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_scholarship_minimum_gpa_value_op
+            label: 'Minimum GPA (field_scholarship_minimum_gpa)'
+            description: null
+            use_operator: false
+            operator: field_scholarship_minimum_gpa_value_op
+            identifier: field_scholarship_minimum_gpa_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: null
+            min_placeholder: null
+            max_placeholder: null
+          is_grouped: true
+          group_info:
+            label: 'Current GPA'
+            description: ''
+            identifier: field_scholarship_minimum_gpa_value
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items:
+              1:
+                title: 'Current GPA 4 or Lower'
+                operator: '<='
+                value:
+                  value: '4'
+                  min: ''
+                  max: ''
+              2:
+                title: 'Current GPA 3.75 or Lower'
+                operator: '<='
+                value:
+                  value: '3.75'
+                  min: ''
+                  max: ''
+              3:
+                title: 'Current GPA 3.5 or Lower'
+                operator: '<='
+                value:
+                  value: '3.5'
+                  min: ''
+                  max: ''
+              4:
+                title: 'Current GPA 3.25 or Lower'
+                operator: '<='
+                value:
+                  value: '3.25'
+                  min: ''
+                  max: ''
+              5:
+                title: 'Current GPA 3 or Lower'
+                operator: '<='
+                value:
+                  value: '3'
+                  min: ''
+                  max: ''
+              6:
+                title: 'Current GPA 2.75 or Lower'
+                operator: '<='
+                value:
+                  value: '2.75'
+                  min: ''
+                  max: ''
+              7:
+                title: 'Current GPA 2.5 or Lower'
+                operator: '<='
+                value:
+                  value: '2.5'
+                  min: ''
+                  max: ''
+              8:
+                title: 'Current GPA 2.25 or Lower'
+                operator: '<='
+                value:
+                  value: '2.25'
+                  min: ''
+                  max: ''
+              9:
+                title: 'Current GPA 2 or Lower'
+                operator: '<='
+                value:
+                  value: '2'
+                  min: ''
+                  max: ''
+          plugin_id: numeric
+        field_scholarship_home_state_target_id:
+          id: field_scholarship_home_state_target_id
+          table: node__field_scholarship_home_state
+          field: field_scholarship_home_state_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_scholarship_home_state_target_id_op
+            label: 'Home State'
+            description: ''
+            use_operator: false
+            operator: field_scholarship_home_state_target_id_op
+            identifier: field_scholarship_home_state_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              site_admin: '0'
+              page_creator: '0'
+              page_reviewer: '0'
+              home_page_creator: '0'
+              home_page_reviewer: '0'
+              article_creator: '0'
+              article_reviewer: '0'
+              finaid_populator: '0'
+              redirect_manager: '0'
+              cms_content_sync: '0'
+              oauth_user: '0'
+              taxonomy_manager: '0'
+              navigation_manager: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: location
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+        field_scholarship_population_value:
+          id: field_scholarship_population_value
+          table: node__field_scholarship_population
+          field: field_scholarship_population_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value:
+            all: all
+            lgbtqia: lgbtqia
+            students_color: students_color
+            students_learning_differences: students_learning_differences
+            women: women
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_scholarship_population_value_op
+            label: Population
+            description: ''
+            use_operator: false
+            operator: field_scholarship_population_value_op
+            identifier: field_scholarship_population_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              site_admin: '0'
+              page_creator: '0'
+              page_reviewer: '0'
+              home_page_creator: '0'
+              home_page_reviewer: '0'
+              article_creator: '0'
+              article_reviewer: '0'
+              finaid_populator: '0'
+              redirect_manager: '0'
+              cms_content_sync: '0'
+              oauth_user: '0'
+              taxonomy_manager: '0'
+              navigation_manager: '0'
+            reduce: true
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          plugin_id: list_field
+        field_scholarship_school_target_id:
+          id: field_scholarship_school_target_id
+          table: node__field_scholarship_school
+          field: field_scholarship_school_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_scholarship_school_target_id_op
+            label: 'Academic Unit'
+            description: ''
+            use_operator: false
+            operator: field_scholarship_school_target_id_op
+            identifier: field_scholarship_school_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              site_admin: '0'
+              page_creator: '0'
+              page_reviewer: '0'
+              home_page_creator: '0'
+              home_page_reviewer: '0'
+              article_creator: '0'
+              article_reviewer: '0'
+              finaid_populator: '0'
+              redirect_manager: '0'
+              cms_content_sync: '0'
+              oauth_user: '0'
+              taxonomy_manager: '0'
+              navigation_manager: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: schools
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+        field_scholarship_major_target_id:
+          id: field_scholarship_major_target_id
+          table: node__field_scholarship_major
+          field: field_scholarship_major_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_scholarship_major_target_id_op
+            label: Major
+            description: ''
+            use_operator: false
+            operator: field_scholarship_major_target_id_op
+            identifier: field_scholarship_major_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              site_admin: '0'
+              page_creator: '0'
+              page_reviewer: '0'
+              home_page_creator: '0'
+              home_page_reviewer: '0'
+              article_creator: '0'
+              article_reviewer: '0'
+              finaid_populator: '0'
+              redirect_manager: '0'
+              cms_content_sync: '0'
+              oauth_user: '0'
+              taxonomy_manager: '0'
+              navigation_manager: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: scholarship_major
+          hierarchy: true
+          error_message: true
+          plugin_id: taxonomy_index_tid
+        field_scholarship_kind_value:
+          id: field_scholarship_kind_value
+          table: node__field_scholarship_kind
+          field: field_scholarship_kind_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_scholarship_kind_value_op
+            label: 'Kind of Scholarship'
+            description: ''
+            use_operator: false
+            operator: field_scholarship_kind_value_op
+            identifier: field_scholarship_kind_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              site_admin: '0'
+              page_creator: '0'
+              page_reviewer: '0'
+              home_page_creator: '0'
+              home_page_reviewer: '0'
+              article_creator: '0'
+              article_reviewer: '0'
+              finaid_populator: '0'
+              redirect_manager: '0'
+              cms_content_sync: '0'
+              oauth_user: '0'
+              taxonomy_manager: '0'
+              navigation_manager: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          plugin_id: list_field
+        field_scholarship_class_level_value:
+          id: field_scholarship_class_level_value
+          table: node__field_scholarship_class_level
+          field: field_scholarship_class_level_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_scholarship_class_level_value_op
+            label: 'All Class Levels'
+            description: ''
+            use_operator: false
+            operator: field_scholarship_class_level_value_op
+            identifier: field_scholarship_class_level_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              site_admin: '0'
+              page_creator: '0'
+              page_reviewer: '0'
+              home_page_creator: '0'
+              home_page_reviewer: '0'
+              article_creator: '0'
+              article_reviewer: '0'
+              finaid_populator: '0'
+              redirect_manager: '0'
+              cms_content_sync: '0'
+              oauth_user: '0'
+              taxonomy_manager: '0'
+              navigation_manager: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          plugin_id: list_field
+        combine:
+          id: combine
+          table: views
+          field: combine
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: combine_op
+            label: ''
+            description: ''
+            use_operator: false
+            operator: combine_op
+            identifier: combine
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              site_admin: '0'
+              page_creator: '0'
+              page_reviewer: '0'
+              home_page_creator: '0'
+              home_page_reviewer: '0'
+              article_creator: '0'
+              article_reviewer: '0'
+              finaid_populator: '0'
+              redirect_manager: '0'
+              cms_content_sync: '0'
+              oauth_user: '0'
+              taxonomy_manager: '0'
+              navigation_manager: '0'
+            placeholder: 'Keyword Search'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          fields:
+            title: title
+            field_scholarship_description: field_scholarship_description
+            field_scholarship_minimum_gpa: field_scholarship_minimum_gpa
+          plugin_id: combine
+      sorts:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: standard
+      title: Scholarship
+      header: {  }
+      footer: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: "<div class=\"no-scholarship-result-found\">\r\nSorry, no results were found. Try using different filter selections or provide a new search keyword.\r\n</div>"
+            format: rich_text
+          plugin_id: text
+      relationships: {  }
+      arguments: {  }
+      display_extenders: {  }
+      use_ajax: true
+      css_class: scholarship-view
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - user
+        - 'user.node_grants:view'
+      tags:
+        - 'config:field.storage.node.field_scholarship_class_level'
+        - 'config:field.storage.node.field_scholarship_description'
+        - 'config:field.storage.node.field_scholarship_home_state'
+        - 'config:field.storage.node.field_scholarship_kind'
+        - 'config:field.storage.node.field_scholarship_major'
+        - 'config:field.storage.node.field_scholarship_minimum_gpa'
+        - 'config:field.storage.node.field_scholarship_population'
+        - 'config:field.storage.node.field_scholarship_school'
+  block_1:
+    display_plugin: block
+    id: block_1
+    display_title: Block
+    position: 1
+    display_options:
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - user
+        - 'user.node_grants:view'
+      tags:
+        - 'config:field.storage.node.field_scholarship_class_level'
+        - 'config:field.storage.node.field_scholarship_description'
+        - 'config:field.storage.node.field_scholarship_home_state'
+        - 'config:field.storage.node.field_scholarship_kind'
+        - 'config:field.storage.node.field_scholarship_major'
+        - 'config:field.storage.node.field_scholarship_minimum_gpa'
+        - 'config:field.storage.node.field_scholarship_population'
+        - 'config:field.storage.node.field_scholarship_school'

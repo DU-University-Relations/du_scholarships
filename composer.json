@@ -1,0 +1,12 @@
+{
+  "name":             "university-of-denver/[MODULE]",
+  "version":          "10.[SPRINT NUMBER].[PATCH]",
+  "description":      "Package of [MODULE] Related Features",
+  "keywords":         ["University of Denver", "drupal"],
+  "homepage":         "http://www.du.edu",
+  "license":          "GPL-2.0+",
+  "type":             "drupal-custom-module-package",
+  "extra": {
+      "_README": "[MODULE] package"
+  }
+}
